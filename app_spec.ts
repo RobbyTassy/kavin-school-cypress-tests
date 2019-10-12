@@ -14,7 +14,7 @@ describe(" Kavin School Playground Test", () => {
 
   context("Fill out form", () => {
     it.only("Smoke test run", () => {
-      // create one todo item
+      
       cy.get("[type=text]").first() // grab the input textbox
         .type(FIRST_NAME) // type the title of the todo
         // .type("{enter}"); // press enter
@@ -45,11 +45,32 @@ describe(" Kavin School Playground Test", () => {
       cy.get("[type=checkbox]")  
         .check('Bicycle')
       
-        cy.get("[type=checkbox]")   
+      cy.get("[type=checkbox]")   
         .check('Van') 
 
+      cy.get("[type=color]")   
+        .dblclick() // Unable to control device to select a color input. This test is incomplete
 
+      cy.get("[type=date]")   
+        .dblclick().type('1988-12-05') // Entering date must be formatted this way on Cypress
 
+      cy.get("[type=month]")   
+        .dblclick().type('1988-12') // Entering year and month must be formatted this way on Cypress
+
+      cy.get("[type=number]").eq(0)  // Target first number field
+        .type('5')
+
+      cy.get("[type=number]").eq(1).clear() //Target second number field, clear default value
+        .type('20') // Enter new value
+
+      cy.get("[type=tel]")
+        .type('305-586-6508')
+
+      cy.get("[type=url]")   
+        .type('www.roberttassy.co')
+
+      cy.get("[type=week]")   
+        .dblclick().type('1988-W23')
 
 
 
