@@ -25,7 +25,6 @@ describe(" Kavin School Playground Test", () => {
       cy.get("[type=email]")
         .type('robtassy@gmail.com') 
 
-      
       cy.get("[type=radio]")
         .check('male') 
       
@@ -36,6 +35,18 @@ describe(" Kavin School Playground Test", () => {
 
       cy.get("[type=password]")
         .type('Invitate') 
+
+      cy.get("[type=checkbox]")
+        .check('Bike')
+
+      cy.get("[type=checkbox]") 
+        .check('Car')
+      
+      cy.get("[type=checkbox]")  
+        .check('Bicycle')
+      
+        cy.get("[type=checkbox]")   
+        .check('Van') 
 
 
 
