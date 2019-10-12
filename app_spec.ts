@@ -52,7 +52,7 @@ describe(" Kavin School Playground Test", () => {
         .dblclick() // Unable to control device to select a color input. This test is incomplete
 
       cy.get("[type=date]")   
-        .dblclick().type('1988-12-05') // Entering date must be formatted this way on Cypress
+        .dblclick().type('1988-12-05') // Entering full date must be formatted this way on Cypress
 
       cy.get("[type=month]")   
         .dblclick().type('1988-12') // Entering year and month must be formatted this way on Cypress
@@ -70,7 +70,7 @@ describe(" Kavin School Playground Test", () => {
         .type('www.roberttassy.co')
 
       cy.get("[type=week]")   
-        .dblclick().type('1988-W23')
+        .dblclick().type('1988-W23') // Entering year and week must be formmatted this way on Cypress
 
 
 
