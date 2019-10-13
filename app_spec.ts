@@ -73,31 +73,51 @@ describe(" Kavin School Playground Test", () => {
         .dblclick().type('1988-W23') // Entering year and week must be formmatted this way on Cypress
 
 
+      .get('#iframe1')  // Target iframe for 'Known computer knowledge' section. Find text in circles.
+      .then(function ($iframe) {
+          const $body = $iframe.contents().find('body')
+      
+          cy
+            .wrap($body)
+            .find('text').contains('ajax')
 
-      // create one todo item
-      // cy.get("[data-cy=todo-input]")
-      //   .type(TODO_ITEM_TWO)
-      //   .type("{enter}");
+            cy
+            .wrap($body)            
+            .find('text').contains('json')
 
-      // // verify the item was added
-      // cy.get("[data-cy=todo-list] li")
-      //   .eq(1) // second li
-      //   .find("label")
-      //   .should("contain", TODO_ITEM_TWO);
+            cy
+            .wrap($body)            
+            .find('text').contains('Android')
 
-      // // create one todo item
-      // cy.get("[data-cy=todo-input]")
-      //   .type(FIRST_NAME)
-      //   .type("{enter}");
+            cy
+            .wrap($body)            
+            .find('text').contains('html')
 
-      // // verify the item was added
-      // cy.get("[data-cy=todo-list] li")
-      //   .eq(2) // third li
-      //   .find("label")
-      //   .should("contain", FIRST_NAME);
+            cy
+            .wrap($body)            
+            .find('text').contains('css')
 
-      // // verify the count is correct
-      // cy.get("[data-cy=todo-count]").contains("3");
+            cy
+            .wrap($body)            
+            .find('text').contains('javascript')
+
+            cy
+            .wrap($body)            
+            .find('text').contains('html5')
+
+            cy
+            .wrap($body)            
+            .find('text').contains('css3')
+
+            cy
+            .wrap($body)            
+            .find('text').contains('jqeury') // Jquery is spelled wrong on your website
+
+
+          
+
+      })
+
     });
 
   });
