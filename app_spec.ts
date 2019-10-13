@@ -113,12 +113,66 @@ describe(" Kavin School Playground Test", () => {
             .wrap($body)            
             .find('text').contains('jqeury') // Jquery is spelled wrong on your website
 
+          .get('#iframe2')  // Target iframe for 'Known computer knowledge' section. Find text in circles.
+          .then(function ($iframe) {
+              const $body = $iframe.contents().find('body')
 
-          
+            cy
+            .wrap($body)
+            .find('text').contains('2008')
 
-      })
+            cy
+            .wrap($body)
+            .find('text').contains('2009')
 
+            cy
+            .wrap($body)
+            .find('text').contains('2010')
+
+            cy
+            .wrap($body)
+            .find('text').contains('2011')
+
+            cy
+            .wrap($body)
+            .find('text').contains('2012')
+
+            cy
+            .wrap($body)
+            .find('text').contains('2013')
+
+            .get('#iframe3')  // Target iframe for 'Known computer knowledge' section. Find text in circles.
+            .then(function ($iframe) {
+                const $body = $iframe.contents().find('body')
+  
+              cy
+              .wrap($body)
+              .find('text').contains('2008')
+  
+              cy
+              .wrap($body)
+              .find('text').contains('2009')
+  
+              cy
+              .wrap($body)
+              .find('text').contains('2010')
+  
+              cy
+              .wrap($body)
+              .find('text').contains('2011')
+  
+              cy
+              .wrap($body)
+              .find('text').contains('2012')
+  
+              cy
+              .wrap($body)
+              .find('text').contains('2013')
+            
+            });
+
+          });
+        });      
     });
-
   });
 });
